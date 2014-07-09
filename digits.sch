@@ -6720,8 +6720,8 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <part name="SUPPLY21" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC"/>
 <part name="D1" library="digits" deviceset="DIODE" device="SOD-123F"/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="JP3" library="SparkFun-Connectors" deviceset="M05X2" device="PTH"/>
-<part name="JP6" library="SparkFun-Connectors" deviceset="M05X2" device="PTH"/>
+<part name="JP3" library="SparkFun-Connectors" deviceset="M05X2" device="SHD" value="M05X2SHD"/>
+<part name="JP6" library="SparkFun-Connectors" deviceset="M05X2" device="SHD" value="M05X2SHD"/>
 <part name="SJ4" library="SparkFun-Retired" deviceset="SOLDERJUMPER" device="TRACE"/>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 </parts>
