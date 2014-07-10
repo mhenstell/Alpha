@@ -6704,7 +6704,7 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <part name="SJ1" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="TRACE"/>
 <part name="SJ2" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="NO"/>
 <part name="SJ3" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="TRACE"/>
-<part name="J2" library="digits" deviceset="HEADER-M26" device=""/>
+<part name="J2" library="digits" deviceset="HEADER-M26" device="" value="ACCESSORY"/>
 <part name="SUPPLY15" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC"/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY16" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC"/>
@@ -8609,15 +8609,6 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <label x="43.18" y="40.64" size="1.4224" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="N$8" class="0">
-<segment>
-<pinref part="IC3" gate="G$1" pin="VCC@14"/>
-<wire x1="307.34" y1="58.42" x2="292.1" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="VCC@34"/>
-<wire x1="307.34" y1="55.88" x2="292.1" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="292.1" y1="55.88" x2="292.1" y2="58.42" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="VCCIC" class="0">
 <segment>
 <pinref part="C8" gate="G$1" pin="1"/>
@@ -8642,11 +8633,15 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <wire x1="279.4" y1="58.42" x2="279.4" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="279.4" y1="58.42" x2="292.1" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="292.1" y1="58.42" x2="294.64" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="294.64" y1="60.96" x2="292.1" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="292.1" y1="60.96" x2="292.1" y2="58.42" width="0.1524" layer="91"/>
-<junction x="292.1" y="58.42"/>
 <junction x="279.4" y="58.42"/>
+<pinref part="IC3" gate="G$1" pin="VCC@34"/>
+<wire x1="307.34" y1="55.88" x2="292.1" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="292.1" y1="55.88" x2="292.1" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="G$1" pin="VCC@14"/>
+<wire x1="307.34" y1="58.42" x2="292.1" y2="58.42" width="0.1524" layer="91"/>
+<junction x="292.1" y="58.42"/>
 </segment>
 <segment>
 <pinref part="IC4" gate="G$1" pin="VCC@34"/>
