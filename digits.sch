@@ -230,7 +230,7 @@
 <text x="-5.675" y="-4.231" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 <rectangle x1="-6.564" y1="-3.088" x2="6.644" y2="3.008" layer="43"/>
 </package>
-<package name="2X16">
+<package name="2X13">
 <wire x1="1.27" y1="-1.905" x2="0.635" y2="-2.54" width="0.2032" layer="21"/>
 <wire x1="-1.27" y1="-1.905" x2="-1.905" y2="-2.54" width="0.2032" layer="21"/>
 <wire x1="-1.905" y1="-2.54" x2="-3.175" y2="-2.54" width="0.2032" layer="21"/>
@@ -384,6 +384,33 @@
 <wire x1="11.43" y1="1.905" x2="11.43" y2="-1.905" width="0.2032" layer="21"/>
 <wire x1="13.97" y1="1.905" x2="13.97" y2="-1.905" width="0.2032" layer="21"/>
 </package>
+<package name="SOD-128">
+<smd name="A" x="-2.2" y="0" dx="2.5" dy="1.4" layer="1" rot="R90"/>
+<smd name="C" x="2.2" y="0" dx="2.5" dy="1.4" layer="1" rot="R90"/>
+<wire x1="-2" y1="1.35" x2="2" y2="1.35" width="0.127" layer="21"/>
+<wire x1="2" y1="1.35" x2="2" y2="-1.35" width="0.127" layer="21"/>
+<wire x1="2" y1="-1.35" x2="-2" y2="-1.35" width="0.127" layer="21"/>
+<wire x1="-2" y1="-1.35" x2="-2" y2="1.35" width="0.127" layer="21"/>
+<text x="-3" y="2" size="1.016" layer="25">&gt;NAME</text>
+<text x="-3" y="-3" size="1.016" layer="27">&gt;VALUE</text>
+<wire x1="0.77" y1="1.27" x2="0.77" y2="-1.27" width="0.127" layer="21"/>
+<rectangle x1="1.3" y1="-1.3" x2="2" y2="1.3" layer="21"/>
+<rectangle x1="0.8" y1="-1.3" x2="1.5" y2="1.3" layer="21"/>
+</package>
+<package name="SOD-123F">
+<wire x1="-0.5" y1="0" x2="0.5" y2="0.4" width="0.1524" layer="21"/>
+<wire x1="0.5" y1="0.4" x2="0.5" y2="-0.4" width="0.1524" layer="21"/>
+<wire x1="0.5" y1="-0.4" x2="-0.5" y2="0" width="0.1524" layer="21"/>
+<wire x1="-1.35" y1="0.825" x2="1.35" y2="0.825" width="0.127" layer="21"/>
+<wire x1="1.35" y1="0.825" x2="1.35" y2="-0.825" width="0.127" layer="21"/>
+<wire x1="1.35" y1="-0.825" x2="-1.35" y2="-0.825" width="0.127" layer="21"/>
+<wire x1="-1.35" y1="-0.825" x2="-1.35" y2="0.825" width="0.127" layer="21"/>
+<smd name="C" x="-1.4" y="0" dx="1.2" dy="1.2" layer="1"/>
+<smd name="A" x="1.4" y="0" dx="1.2" dy="1.2" layer="1"/>
+<text x="-1.1" y="1" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-1.1" y="-1.284" size="0.4064" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.7" y1="-0.7" x2="-0.5" y2="0.7" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BL-S230X-12">
@@ -497,6 +524,17 @@
 <wire x1="1.27" y1="-15.24" x2="2.54" y2="-15.24" width="0.6096" layer="94"/>
 <pin name="26" x="7.62" y="-15.24" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 </symbol>
+<symbol name="DIODE">
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<text x="-2.54" y="2.54" size="1.27" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-3.81" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="A" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+<pin name="C" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BL-S230X-12">
@@ -569,7 +607,7 @@
 <gate name="G$1" symbol="HEADER-M26" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="2X16">
+<device name="" package="2X13">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="10" pad="10"/>
@@ -597,6 +635,31 @@
 <connect gate="G$1" pin="7" pad="7"/>
 <connect gate="G$1" pin="8" pad="8"/>
 <connect gate="G$1" pin="9" pad="9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DIODE" prefix="D">
+<gates>
+<gate name="G$1" symbol="DIODE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="SOD-123F" package="SOD-123F">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SOD-128" package="SOD-128">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -4929,219 +4992,6 @@ chip</description>
 <rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
 <rectangle x1="-0.2032" y1="-0.3556" x2="0.2032" y2="0.3556" layer="21"/>
 </package>
-<package name="SMA-DIODE">
-<description>&lt;B&gt;Diode&lt;/B&gt;&lt;p&gt;
-Basic SMA packaged diode. Good for reverse polarization protection. Common part #: MBRA140</description>
-<wire x1="-2.3" y1="1" x2="-2.3" y2="1.45" width="0.2032" layer="21"/>
-<wire x1="-2.3" y1="1.45" x2="2.3" y2="1.45" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="1.45" x2="2.3" y2="1" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="-1" x2="2.3" y2="-1.45" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="-1.45" x2="-2.3" y2="-1.45" width="0.2032" layer="21"/>
-<wire x1="-2.3" y1="-1.45" x2="-2.3" y2="-1" width="0.2032" layer="21"/>
-<wire x1="1" y1="1" x2="1" y2="-1" width="0.2032" layer="21"/>
-<smd name="A" x="-2.15" y="0" dx="1.27" dy="1.47" layer="1" rot="R180"/>
-<smd name="C" x="2.15" y="0" dx="1.27" dy="1.47" layer="1"/>
-<text x="-2.286" y="1.651" size="0.4064" layer="25">&gt;NAME</text>
-<text x="0.254" y="1.651" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
-<package name="DIODE-1N4001">
-<wire x1="3.175" y1="1.27" x2="1.905" y2="1.27" width="0.254" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="-3.175" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-3.175" y1="1.27" x2="-3.175" y2="0" width="0.254" layer="21"/>
-<wire x1="-3.175" y1="0" x2="-3.175" y2="-1.27" width="0.254" layer="21"/>
-<wire x1="-3.175" y1="-1.27" x2="1.905" y2="-1.27" width="0.254" layer="21"/>
-<wire x1="1.905" y1="-1.27" x2="3.175" y2="-1.27" width="0.254" layer="21"/>
-<wire x1="3.175" y1="-1.27" x2="3.175" y2="0" width="0.254" layer="21"/>
-<wire x1="3.175" y1="0" x2="3.175" y2="1.27" width="0.254" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="1.905" y2="-1.27" width="0.254" layer="21"/>
-<wire x1="-3.175" y1="0" x2="-3.81" y2="0" width="0.254" layer="21"/>
-<wire x1="3.175" y1="0" x2="3.81" y2="0" width="0.254" layer="21"/>
-<pad name="A" x="-5.08" y="0" drill="1" diameter="1.9812"/>
-<pad name="C" x="5.08" y="0" drill="1" diameter="1.9812"/>
-<text x="-2.921" y="1.651" size="0.6096" layer="25">&gt;Name</text>
-<text x="-2.921" y="-0.508" size="1.016" layer="21" ratio="12">&gt;Value</text>
-</package>
-<package name="SOD-323">
-<wire x1="-0.9" y1="0.65" x2="-0.5" y2="0.65" width="0.2032" layer="21"/>
-<wire x1="-0.5" y1="0.65" x2="0.9" y2="0.65" width="0.2032" layer="21"/>
-<wire x1="-0.9" y1="-0.65" x2="-0.5" y2="-0.65" width="0.2032" layer="21"/>
-<wire x1="-0.5" y1="-0.65" x2="0.9" y2="-0.65" width="0.2032" layer="21"/>
-<wire x1="-0.5" y1="0.65" x2="-0.5" y2="-0.65" width="0.2032" layer="21"/>
-<smd name="C" x="-1.15" y="0" dx="0.63" dy="0.83" layer="1"/>
-<smd name="A" x="1.15" y="0" dx="0.63" dy="0.83" layer="1"/>
-<text x="-0.889" y="1.016" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-1.016" y="-1.397" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
-<package name="SOT23-3">
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-0.8" y1="0.7" x2="-1.4" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="-1.4" y1="0.7" x2="-1.4" y2="-0.1" width="0.2032" layer="21"/>
-<wire x1="0.8" y1="0.7" x2="1.4" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="1.4" y1="0.7" x2="1.4" y2="-0.1" width="0.2032" layer="21"/>
-<smd name="1" x="-0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
-<smd name="2" x="0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
-<smd name="3" x="0" y="1.1" dx="0.8" dy="0.9" layer="1"/>
-<text x="-0.8255" y="1.778" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-1.016" y="-0.1905" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
-<package name="DIODE-1N4148">
-<wire x1="-2.54" y1="0.762" x2="2.54" y2="0.762" width="0.2032" layer="21"/>
-<wire x1="2.54" y1="0.762" x2="2.54" y2="0" width="0.2032" layer="21"/>
-<wire x1="2.54" y1="0" x2="2.54" y2="-0.762" width="0.2032" layer="21"/>
-<wire x1="2.54" y1="-0.762" x2="-2.54" y2="-0.762" width="0.2032" layer="21"/>
-<wire x1="-2.54" y1="-0.762" x2="-2.54" y2="0" width="0.2032" layer="21"/>
-<wire x1="-2.54" y1="0" x2="-2.54" y2="0.762" width="0.2032" layer="21"/>
-<wire x1="2.54" y1="0" x2="2.794" y2="0" width="0.2032" layer="21"/>
-<wire x1="-2.54" y1="0" x2="-2.794" y2="0" width="0.2032" layer="21"/>
-<wire x1="1.905" y1="0.635" x2="1.905" y2="-0.635" width="0.2032" layer="21"/>
-<pad name="A" x="-3.81" y="0" drill="0.9" diameter="1.8796"/>
-<pad name="C" x="3.81" y="0" drill="0.9" diameter="1.8796"/>
-<text x="-2.54" y="1.27" size="0.4064" layer="25">&gt;Name</text>
-<text x="-2.032" y="-0.508" size="0.8128" layer="21">&gt;Value</text>
-</package>
-<package name="SMB-DIODE">
-<description>&lt;b&gt;Diode&lt;/b&gt;&lt;p&gt;
-Basic small signal diode good up to 200mA. SMB footprint. Common part #: BAS16</description>
-<wire x1="-3.973" y1="1.983" x2="3.973" y2="1.983" width="0.0508" layer="39"/>
-<wire x1="3.973" y1="-1.983" x2="-3.973" y2="-1.983" width="0.0508" layer="39"/>
-<wire x1="-3.973" y1="-1.983" x2="-3.973" y2="1.983" width="0.0508" layer="39"/>
-<wire x1="3.973" y1="1.983" x2="3.973" y2="-1.983" width="0.0508" layer="39"/>
-<wire x1="-2.2606" y1="1.905" x2="2.2606" y2="1.905" width="0.1016" layer="21"/>
-<wire x1="-2.2606" y1="-1.905" x2="2.2606" y2="-1.905" width="0.1016" layer="21"/>
-<wire x1="-2.261" y1="-1.905" x2="-2.261" y2="1.905" width="0.1016" layer="51"/>
-<wire x1="2.261" y1="-1.905" x2="2.261" y2="1.905" width="0.1016" layer="51"/>
-<wire x1="0.643" y1="1" x2="-0.73" y2="0" width="0.2032" layer="21"/>
-<wire x1="-0.73" y1="0" x2="0.643" y2="-1" width="0.2032" layer="21"/>
-<wire x1="0.643" y1="-1" x2="0.643" y2="1" width="0.2032" layer="21"/>
-<wire x1="-0.73" y1="1" x2="-0.73" y2="-1" width="0.2032" layer="21"/>
-<smd name="C" x="-2.2" y="0" dx="2.4" dy="2.4" layer="1"/>
-<smd name="A" x="2.2" y="0" dx="2.4" dy="2.4" layer="1"/>
-<text x="-2.159" y="2.159" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-3.429" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-2.794" y1="-1.0922" x2="-2.2606" y2="1.0922" layer="51"/>
-<rectangle x1="2.2606" y1="-1.0922" x2="2.794" y2="1.0922" layer="51"/>
-</package>
-<package name="DIODE-HV">
-<wire x1="-3.973" y1="1.983" x2="3.973" y2="1.983" width="0.0508" layer="39"/>
-<wire x1="3.973" y1="-1.983" x2="-3.973" y2="-1.983" width="0.0508" layer="39"/>
-<wire x1="-3.973" y1="-1.983" x2="-3.973" y2="1.983" width="0.0508" layer="39"/>
-<wire x1="3.973" y1="1.983" x2="3.973" y2="-1.983" width="0.0508" layer="39"/>
-<wire x1="-2.2606" y1="1.905" x2="2.2606" y2="1.905" width="0.1016" layer="21"/>
-<wire x1="-2.2606" y1="-1.905" x2="2.2606" y2="-1.905" width="0.1016" layer="21"/>
-<wire x1="-2.261" y1="-1.905" x2="-2.261" y2="1.905" width="0.1016" layer="51"/>
-<wire x1="2.261" y1="-1.905" x2="2.261" y2="1.905" width="0.1016" layer="51"/>
-<wire x1="0.643" y1="1" x2="-0.73" y2="0" width="0.2032" layer="21"/>
-<wire x1="-0.73" y1="0" x2="0.643" y2="-1" width="0.2032" layer="21"/>
-<wire x1="0.643" y1="-1" x2="0.643" y2="1" width="0.2032" layer="21"/>
-<wire x1="-0.73" y1="1" x2="-0.73" y2="-1" width="0.2032" layer="21"/>
-<smd name="C" x="-2.454" y="0" dx="2.2" dy="2.4" layer="1"/>
-<smd name="A" x="2.454" y="0" dx="2.2" dy="2.4" layer="1"/>
-<text x="-2.159" y="2.159" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-3.429" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-2.794" y1="-1.0922" x2="-2.2606" y2="1.0922" layer="51"/>
-<rectangle x1="2.2606" y1="-1.0922" x2="2.794" y2="1.0922" layer="51"/>
-</package>
-<package name="SMA-DIODE_ALT">
-<wire x1="-2.3" y1="1.3" x2="-2.3" y2="1.45" width="0.2032" layer="21"/>
-<wire x1="-2.3" y1="1.45" x2="2.3" y2="1.45" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="1.45" x2="2.3" y2="1.3" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="-1.3" x2="2.3" y2="-1.45" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="-1.45" x2="-2.3" y2="-1.45" width="0.2032" layer="21"/>
-<wire x1="-2.3" y1="-1.45" x2="-2.3" y2="-1.3" width="0.2032" layer="21"/>
-<wire x1="0.6" y1="1" x2="0.6" y2="-1" width="0.2032" layer="21"/>
-<smd name="A" x="-2" y="0" dx="2" dy="2" layer="1" rot="R180"/>
-<smd name="C" x="2" y="0" dx="2" dy="2" layer="1"/>
-<text x="-2.286" y="1.651" size="0.4064" layer="25">&gt;NAME</text>
-<text x="0.254" y="1.651" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
-<package name="SMA-DIODE-KIT">
-<wire x1="-2.3" y1="1" x2="-2.3" y2="1.45" width="0.2032" layer="21"/>
-<wire x1="-2.3" y1="1.45" x2="2.3" y2="1.45" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="1.45" x2="2.3" y2="1" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="-1" x2="2.3" y2="-1.45" width="0.2032" layer="21"/>
-<wire x1="2.3" y1="-1.45" x2="-2.3" y2="-1.45" width="0.2032" layer="21"/>
-<wire x1="-2.3" y1="-1.45" x2="-2.3" y2="-1" width="0.2032" layer="21"/>
-<wire x1="1" y1="1" x2="1" y2="-1" width="0.2032" layer="21"/>
-<smd name="A" x="-2.4" y="0" dx="1.77" dy="1.47" layer="1" rot="R180"/>
-<smd name="C" x="2.4" y="0" dx="1.77" dy="1.47" layer="1"/>
-<text x="-2.286" y="1.651" size="0.4064" layer="25">&gt;NAME</text>
-<text x="0.254" y="1.651" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
-<package name="SOD523">
-<wire x1="-0.59" y1="0.4" x2="0.59" y2="0.4" width="0.1016" layer="21"/>
-<wire x1="0.59" y1="0.4" x2="0.59" y2="-0.4" width="0.1016" layer="51"/>
-<wire x1="0.59" y1="-0.4" x2="-0.59" y2="-0.4" width="0.1016" layer="21"/>
-<wire x1="-0.59" y1="-0.4" x2="-0.59" y2="0.4" width="0.1016" layer="51"/>
-<rectangle x1="-0.75" y1="-0.17" x2="-0.54" y2="0.17" layer="51"/>
-<rectangle x1="0.54" y1="-0.17" x2="0.75" y2="0.17" layer="51"/>
-<rectangle x1="-0.59" y1="-0.4" x2="-0.3" y2="0.4" layer="51"/>
-<smd name="A" x="0.7" y="0" dx="0.7" dy="0.5" layer="1"/>
-<smd name="C" x="-0.6" y="0" dx="0.7" dy="0.5" layer="1"/>
-<text x="-0.7366" y="0.5588" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-0.6858" y="-0.9906" size="0.4064" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.1397" y1="-0.3937" x2="-0.0127" y2="0.381" layer="21"/>
-</package>
-<package name="SMC">
-<description>&lt;b&gt;DIODE&lt;/b&gt;</description>
-<wire x1="-3.5606" y1="3.105" x2="3.5606" y2="3.105" width="0.1016" layer="21"/>
-<wire x1="-3.5606" y1="-3.105" x2="3.5606" y2="-3.105" width="0.1016" layer="21"/>
-<wire x1="-3.5606" y1="-3.105" x2="-3.5606" y2="3.105" width="0.1016" layer="51"/>
-<wire x1="3.5606" y1="-3.105" x2="3.5606" y2="3.105" width="0.1016" layer="51"/>
-<wire x1="0.543" y1="1" x2="-0.83" y2="0" width="0.2032" layer="21"/>
-<wire x1="-0.83" y1="0" x2="0.543" y2="-1" width="0.2032" layer="21"/>
-<wire x1="0.543" y1="-1" x2="0.543" y2="1" width="0.2032" layer="21"/>
-<smd name="C" x="-3.7" y="0" dx="2.8" dy="3.8" layer="1"/>
-<smd name="A" x="3.7" y="0" dx="2.8" dy="3.8" layer="1"/>
-<text x="-3.459" y="3.359" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.459" y="-4.629" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-4.094" y1="-1.0922" x2="-3.5606" y2="1.0922" layer="51"/>
-<rectangle x1="3.5606" y1="-1.0922" x2="4.094" y2="1.0922" layer="51"/>
-<rectangle x1="-2.1" y1="-3.1" x2="-0.85" y2="3.1" layer="21"/>
-</package>
-<package name="DIODE-1N4148-KIT">
-<wire x1="-2.54" y1="0.762" x2="2.54" y2="0.762" width="0.2032" layer="21"/>
-<wire x1="2.54" y1="0.762" x2="2.54" y2="0" width="0.2032" layer="21"/>
-<wire x1="2.54" y1="0" x2="2.54" y2="-0.762" width="0.2032" layer="21"/>
-<wire x1="2.54" y1="-0.762" x2="-2.54" y2="-0.762" width="0.2032" layer="21"/>
-<wire x1="-2.54" y1="-0.762" x2="-2.54" y2="0" width="0.2032" layer="21"/>
-<wire x1="-2.54" y1="0" x2="-2.54" y2="0.762" width="0.2032" layer="21"/>
-<wire x1="2.54" y1="0" x2="2.794" y2="0" width="0.2032" layer="21"/>
-<wire x1="-2.54" y1="0" x2="-2.794" y2="0" width="0.2032" layer="21"/>
-<wire x1="1.905" y1="0.635" x2="1.905" y2="-0.635" width="0.2032" layer="21"/>
-<pad name="A" x="-3.81" y="0" drill="0.9" diameter="1.8796" stop="no"/>
-<pad name="C" x="3.81" y="0" drill="0.9" diameter="1.8796" stop="no"/>
-<text x="-2.54" y="1.27" size="0.4064" layer="25">&gt;Name</text>
-<text x="-2.032" y="-0.508" size="0.8128" layer="21">&gt;Value</text>
-<circle x="-3.81" y="0" radius="0.4572" width="0" layer="29"/>
-<circle x="-3.81" y="0" radius="0.9398" width="0" layer="30"/>
-<circle x="-3.81" y="0" radius="0.4572" width="0" layer="29"/>
-<circle x="3.81" y="0" radius="0.4572" width="0" layer="29"/>
-<circle x="3.81" y="0" radius="0.9398" width="0" layer="30"/>
-</package>
-<package name="DIODE-1N4001-KIT">
-<wire x1="3.175" y1="1.27" x2="1.905" y2="1.27" width="0.254" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="-3.175" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-3.175" y1="1.27" x2="-3.175" y2="0" width="0.254" layer="21"/>
-<wire x1="-3.175" y1="0" x2="-3.175" y2="-1.27" width="0.254" layer="21"/>
-<wire x1="-3.175" y1="-1.27" x2="1.905" y2="-1.27" width="0.254" layer="21"/>
-<wire x1="1.905" y1="-1.27" x2="3.175" y2="-1.27" width="0.254" layer="21"/>
-<wire x1="3.175" y1="-1.27" x2="3.175" y2="0" width="0.254" layer="21"/>
-<wire x1="3.175" y1="0" x2="3.175" y2="1.27" width="0.254" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="1.905" y2="-1.27" width="0.254" layer="21"/>
-<wire x1="-3.175" y1="0" x2="-3.81" y2="0" width="0.254" layer="21"/>
-<wire x1="3.175" y1="0" x2="3.81" y2="0" width="0.254" layer="21"/>
-<pad name="A" x="-5.08" y="0" drill="1.016" diameter="1.8796" stop="no"/>
-<pad name="C" x="5.08" y="0" drill="1.016" diameter="1.8796" stop="no"/>
-<text x="-2.921" y="1.651" size="0.6096" layer="25">&gt;Name</text>
-<text x="-2.921" y="-0.508" size="1.016" layer="21" ratio="12">&gt;Value</text>
-<circle x="-5.08" y="0" radius="0.508" width="0" layer="29"/>
-<circle x="5.08" y="0" radius="0.508" width="0" layer="29"/>
-<circle x="-5.08" y="0" radius="0.9906" width="0" layer="30"/>
-<circle x="5.08" y="0" radius="0.9906" width="0" layer="30"/>
-</package>
 </packages>
 <symbols>
 <symbol name="VARISTOR">
@@ -5156,20 +5006,6 @@ Basic small signal diode good up to 200mA. SMB footprint. Common part #: BAS16</
 <text x="-3.81" y="-3.556" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-</symbol>
-<symbol name="DIODE">
-<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="0" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
-<text x="2.54" y="0.4826" size="1.778" layer="95">&gt;NAME</text>
-<text x="2.54" y="-2.3114" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="A" x="-2.54" y="0" visible="off" length="point" direction="pas"/>
-<pin name="C" x="2.54" y="0" visible="off" length="point" direction="pas" rot="R180"/>
-<wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="0" x2="1.27" y2="0" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -5195,136 +5031,6 @@ Varistor is equivalent with Zener diode of two series connection.</description>
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="DIODE" prefix="D" uservalue="yes">
-<description>&lt;b&gt;Diode&lt;/b&gt;
-These are standard reverse protection diodes and small signal diodes. SMA package can handle up to about 1A. SOD-323 can handle about 200mA. What the SOD-323 package when ordering, there are some mfgs out there that are 5-pin packages.</description>
-<gates>
-<gate name="G$1" symbol="DIODE" x="0" y="0"/>
-</gates>
-<devices>
-<device name="SMA" package="SMA-DIODE">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="PTH" package="DIODE-1N4001">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SOD" package="SOD-323">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="DIO-09646" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="SOT23" package="SOT23-3">
-<connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="C" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="1N4148" package="DIODE-1N4148">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMB" package="SMB-DIODE">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="DIO-09646" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="HV" package="DIODE-HV">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMA-ALT" package="SMA-DIODE_ALT">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMA-KIT" package="SMA-DIODE-KIT">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SOD523" package="SOD523">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SMC/DO-214AB" package="SMC">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="KIT" package="DIODE-1N4148-KIT">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="" package="DIODE-1N4001-KIT">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -6955,6 +6661,7 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 </library>
 </libraries>
 <attributes>
+<attribute name="DATABASE" value="../partsdb.txt"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -6968,79 +6675,163 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <part name="SEG3" library="digits" deviceset="BL-S230X-12" device=""/>
 <part name="SEG4" library="digits" deviceset="BL-S230X-12" device=""/>
 <part name="SEG5" library="digits" deviceset="BL-S230X-12" device=""/>
-<part name="IC1" library="SparkFun-DigitalIC" deviceset="STP16CP05" device="" value="STP16CP05 / STP16CPC26"/>
+<part name="IC1" library="SparkFun-DigitalIC" deviceset="STP16CP05" device="" value="STP16CP05 / STP16CPC26">
+<attribute name="PARTNO" value="STP16CPC26MTR"/>
+</part>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="0.1uF"/>
-<part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="390R"/>
+<part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="0.1uF">
+<attribute name="PARTNO" value="C0805C104K5RACTU"/>
+</part>
+<part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="390R">
+<attribute name="PARTNO" value="RC0805FR-07390RL"/>
+</part>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="IC2" library="SparkFun-DigitalIC" deviceset="STP16CP05" device="" value="STP16CP05 / STP16CPC26"/>
+<part name="IC2" library="SparkFun-DigitalIC" deviceset="STP16CP05" device="" value="STP16CP05 / STP16CPC26">
+<attribute name="PARTNO" value="STP16CPC26MTR"/>
+</part>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND4" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="0.1uF"/>
-<part name="R2" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="910R"/>
+<part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="0.1uF">
+<attribute name="PARTNO" value="C0805C104K5RACTU"/>
+</part>
+<part name="R2" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="910R">
+<attribute name="PARTNO" value="MCR10ERTF9100"/>
+</part>
 <part name="GND5" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="IC3" library="SparkFun-DigitalIC" deviceset="ATMEGA32U4" device="QFN"/>
-<part name="IC4" library="SparkFun-DigitalIC" deviceset="ATMEGA32U4" device="TQFP-44"/>
-<part name="JP1" library="SparkFun-Connectors" deviceset="M03X2" device="NO_SILK" value="ICSP"/>
-<part name="C3" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="1uF"/>
+<part name="IC3" library="SparkFun-DigitalIC" deviceset="ATMEGA32U4" device="QFN">
+<attribute name="PARTNO" value="ATMEGA32U4-MUR"/>
+</part>
+<part name="IC4" library="SparkFun-DigitalIC" deviceset="ATMEGA32U4" device="TQFP-44">
+<attribute name="PARTNO" value="ATMEGA32U4-AU"/>
+</part>
+<part name="JP1" library="SparkFun-Connectors" deviceset="M03X2" device="NO_SILK" value="ICSP">
+<attribute name="PARTNO" value="M20-9980346"/>
+</part>
+<part name="C3" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="1uF">
+<attribute name="PARTNO" value="CL21B105KBFNNNE"/>
+</part>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="L1" library="digits" deviceset="FERRITE" device="0805"/>
-<part name="JP2" library="SparkFun-Connectors" deviceset="USB" device="SMD"/>
-<part name="R3" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="22R"/>
-<part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="22R"/>
-<part name="Z1" library="SparkFun-DiscreteSemi" deviceset="VARISTOR" device="-0603"/>
-<part name="Z2" library="SparkFun-DiscreteSemi" deviceset="VARISTOR" device="-0603"/>
+<part name="L1" library="digits" deviceset="FERRITE" device="0805">
+<attribute name="PARTNO" value="CIM21J601NE"/>
+</part>
+<part name="JP2" library="SparkFun-Connectors" deviceset="USB" device="SMD">
+<attribute name="PARTNO" value="690-005-299-043"/>
+</part>
+<part name="R3" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="22R">
+<attribute name="PARTNO" value="RC0805FR-0722RL"/>
+</part>
+<part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="22R">
+<attribute name="PARTNO" value="RC0805FR-0722RL"/>
+</part>
+<part name="Z1" library="SparkFun-DiscreteSemi" deviceset="VARISTOR" device="-0603">
+<attribute name="PARTNO" value="CG0603MLC-05E"/>
+</part>
+<part name="Z2" library="SparkFun-DiscreteSemi" deviceset="VARISTOR" device="-0603">
+<attribute name="PARTNO" value="CG0603MLC-05E"/>
+</part>
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C4" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="22pF"/>
-<part name="R5" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="1M"/>
+<part name="C4" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="22pF">
+<attribute name="PARTNO" value="C0805C220J5GACTU"/>
+</part>
+<part name="R5" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="1M">
+<attribute name="PARTNO" value="RC0805FR-071ML"/>
+</part>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="X1" library="digits" deviceset="CRYSTAL" device="HC49"/>
-<part name="C5" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="22pF"/>
+<part name="X1" library="digits" deviceset="CRYSTAL" device="HC49">
+<attribute name="PARTNO" value="9C-16.000MAAJ-T"/>
+</part>
+<part name="C5" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="22pF">
+<attribute name="PARTNO" value="C0805C220J5GACTU"/>
+</part>
 <part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C6" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="1uF"/>
+<part name="C6" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="1uF">
+<attribute name="PARTNO" value="CL21B105KBFNNNE"/>
+</part>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C7" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="100nF"/>
+<part name="C7" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="100nF">
+<attribute name="PARTNO" value="C0805C104K5RACTU"/>
+</part>
 <part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C8" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="100nF"/>
-<part name="C9" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="100nF"/>
-<part name="R6" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="10k"/>
+<part name="C8" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="100nF">
+<attribute name="PARTNO" value="C0805C104K5RACTU"/>
+</part>
+<part name="C9" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="100nF">
+<attribute name="PARTNO" value="C0805C104K5RACTU"/>
+</part>
+<part name="R6" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="10k">
+<attribute name="PARTNO" value="RC0805JR-0710KL"/>
+</part>
 <part name="GND13" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="LED1" library="adafruit" deviceset="LED" device="CHIP-LED0805" value="DEBUG"/>
-<part name="R8" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="910R"/>
+<part name="LED1" library="adafruit" deviceset="LED" device="CHIP-LED0805" value="DEBUG">
+<attribute name="PARTNO" value="LG R971-KN-1"/>
+</part>
+<part name="R8" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="910R">
+<attribute name="PARTNO" value="MCR10ERTF9100"/>
+</part>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="JP4" library="SparkFun-Connectors" deviceset="M10" device="LOCK" value="Adafruit Bluefruit LE"/>
 <part name="GND23" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="J1" library="SparkFun-Connectors" deviceset="POWER_JACK" device="PTH_LOCK"/>
+<part name="J1" library="SparkFun-Connectors" deviceset="POWER_JACK" device="PTH_LOCK">
+<attribute name="PARTNO" value="PJ-202A"/>
+</part>
 <part name="JP5" library="SparkFun-Connectors" deviceset="M09" device="LOCK" value="Adafruit CC3000 Wifi"/>
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="SJ1" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="TRACE"/>
-<part name="SJ2" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="NO"/>
-<part name="SJ3" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="TRACE"/>
-<part name="J2" library="digits" deviceset="HEADER-M26" device="" value="ACCESSORY"/>
+<part name="SJ1" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="TRACE">
+<attribute name="BOM" value="EXCLUDE"/>
+</part>
+<part name="SJ2" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="NO">
+<attribute name="BOM" value="EXCLUDE"/>
+</part>
+<part name="SJ3" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="TRACE">
+<attribute name="BOM" value="EXCLUDE"/>
+</part>
+<part name="J2" library="digits" deviceset="HEADER-M26" device="" value="ACCESSORY">
+<attribute name="PARTNO" value="SFH11-PBPC-D13-ST-BK"/>
+</part>
 <part name="SUPPLY15" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC"/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY16" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC"/>
-<part name="T1" library="zetex" deviceset="PMOSSOT23" device=""/>
+<part name="T1" library="zetex" deviceset="PMOSSOT23" device="">
+<attribute name="PARTNO" value="FDN352AP"/>
+</part>
 <part name="SUPPLY17" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC"/>
-<part name="T2" library="zetex" deviceset="PMOSSOT23" device=""/>
+<part name="T2" library="zetex" deviceset="PMOSSOT23" device="">
+<attribute name="PARTNO" value="FDN352AP"/>
+</part>
 <part name="SUPPLY18" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC"/>
-<part name="T3" library="zetex" deviceset="PMOSSOT23" device=""/>
+<part name="T3" library="zetex" deviceset="PMOSSOT23" device="">
+<attribute name="PARTNO" value="FDN352AP"/>
+</part>
 <part name="SUPPLY19" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC"/>
-<part name="T4" library="zetex" deviceset="PMOSSOT23" device=""/>
+<part name="T4" library="zetex" deviceset="PMOSSOT23" device="">
+<attribute name="PARTNO" value="FDN352AP"/>
+</part>
 <part name="SUPPLY20" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC"/>
-<part name="T5" library="zetex" deviceset="PMOSSOT23" device=""/>
+<part name="T5" library="zetex" deviceset="PMOSSOT23" device="">
+<attribute name="PARTNO" value="FDN352AP"/>
+</part>
 <part name="SUPPLY21" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC"/>
-<part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="SOD"/>
+<part name="D1" library="digits" deviceset="DIODE" device="SOD-128" value="PMEG3030EP">
+<attribute name="PARTNO" value="PMEG3030EP-115"/>
+</part>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="JP3" library="SparkFun-Connectors" deviceset="M05X2" device="SHD" value="M05X2SHD"/>
-<part name="JP6" library="SparkFun-Connectors" deviceset="M05X2" device="SHD" value="M05X2SHD"/>
-<part name="SJ4" library="SparkFun-Retired" deviceset="SOLDERJUMPER" device="TRACE"/>
+<part name="JP3" library="SparkFun-Connectors" deviceset="M05X2" device="SHD" value="M05X2SHD">
+<attribute name="PARTNO" value="302-S101"/>
+</part>
+<part name="JP6" library="SparkFun-Connectors" deviceset="M05X2" device="SHD" value="M05X2SHD">
+<attribute name="PARTNO" value="302-S101"/>
+</part>
+<part name="SJ4" library="SparkFun-Retired" deviceset="SOLDERJUMPER" device="TRACE">
+<attribute name="BOM" value="EXCLUDE"/>
+</part>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="D2" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="SOD"/>
+<part name="D2" library="digits" deviceset="DIODE" device="SOD-128" value="PMEG3030EP">
+<attribute name="PARTNO" value="PMEG3030EP-115"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -7052,79 +6843,163 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <instance part="SEG3" gate="G$1" x="111.76" y="73.66"/>
 <instance part="SEG4" gate="G$1" x="160.02" y="73.66"/>
 <instance part="SEG5" gate="G$1" x="208.28" y="73.66"/>
-<instance part="IC1" gate="G$1" x="27.94" y="-22.86"/>
+<instance part="IC1" gate="G$1" x="27.94" y="-22.86">
+<attribute name="PARTNO" x="27.94" y="-22.86" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY1" gate="G$1" x="12.7" y="7.62"/>
 <instance part="GND1" gate="1" x="12.7" y="-48.26"/>
-<instance part="C1" gate="G$1" x="5.08" y="5.08" rot="R270"/>
-<instance part="R1" gate="G$1" x="7.62" y="-25.4"/>
+<instance part="C1" gate="G$1" x="5.08" y="5.08" rot="R270">
+<attribute name="PARTNO" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R1" gate="G$1" x="7.62" y="-25.4">
+<attribute name="PARTNO" x="7.62" y="-25.4" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND2" gate="1" x="0" y="-30.48"/>
 <instance part="GND3" gate="1" x="0" y="0"/>
-<instance part="IC2" gate="G$1" x="93.98" y="-22.86"/>
+<instance part="IC2" gate="G$1" x="93.98" y="-22.86">
+<attribute name="PARTNO" x="93.98" y="-22.86" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY2" gate="G$1" x="78.74" y="7.62"/>
 <instance part="GND4" gate="1" x="78.74" y="-48.26"/>
-<instance part="C2" gate="G$1" x="71.12" y="5.08" rot="R270"/>
-<instance part="R2" gate="G$1" x="73.66" y="-25.4"/>
+<instance part="C2" gate="G$1" x="71.12" y="5.08" rot="R270">
+<attribute name="PARTNO" x="71.12" y="5.08" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R2" gate="G$1" x="73.66" y="-25.4">
+<attribute name="PARTNO" x="73.66" y="-25.4" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND5" gate="1" x="66.04" y="-30.48"/>
 <instance part="GND6" gate="1" x="66.04" y="0"/>
-<instance part="IC3" gate="G$1" x="325.12" y="25.4"/>
-<instance part="IC4" gate="G$1" x="416.56" y="25.4"/>
-<instance part="JP1" gate="G$1" x="327.66" y="78.74"/>
-<instance part="C3" gate="G$1" x="289.56" y="45.72" rot="R270"/>
+<instance part="IC3" gate="G$1" x="325.12" y="25.4">
+<attribute name="PARTNO" x="325.12" y="25.4" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="IC4" gate="G$1" x="416.56" y="25.4">
+<attribute name="PARTNO" x="416.56" y="25.4" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="JP1" gate="G$1" x="327.66" y="78.74">
+<attribute name="PARTNO" x="327.66" y="78.74" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C3" gate="G$1" x="289.56" y="45.72" rot="R270">
+<attribute name="PARTNO" x="289.56" y="45.72" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND7" gate="1" x="279.4" y="45.72" rot="R270"/>
-<instance part="L1" gate="G$1" x="281.94" y="50.8"/>
-<instance part="JP2" gate="G$1" x="236.22" y="45.72" rot="R180"/>
-<instance part="R3" gate="G$1" x="256.54" y="33.02"/>
-<instance part="R4" gate="G$1" x="256.54" y="27.94"/>
-<instance part="Z1" gate="G$1" x="243.84" y="17.78" rot="R90"/>
-<instance part="Z2" gate="G$1" x="248.92" y="17.78" rot="R90"/>
+<instance part="L1" gate="G$1" x="281.94" y="50.8">
+<attribute name="PARTNO" x="281.94" y="50.8" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="JP2" gate="G$1" x="236.22" y="45.72" rot="R180">
+<attribute name="PARTNO" x="236.22" y="45.72" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R3" gate="G$1" x="256.54" y="33.02">
+<attribute name="PARTNO" x="256.54" y="33.02" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R4" gate="G$1" x="256.54" y="27.94">
+<attribute name="PARTNO" x="256.54" y="27.94" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="Z1" gate="G$1" x="243.84" y="17.78" rot="R90">
+<attribute name="PARTNO" x="243.84" y="17.78" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="Z2" gate="G$1" x="248.92" y="17.78" rot="R90">
+<attribute name="PARTNO" x="248.92" y="17.78" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND8" gate="1" x="243.84" y="2.54"/>
-<instance part="C4" gate="G$1" x="269.24" y="17.78" rot="R90"/>
-<instance part="R5" gate="G$1" x="289.56" y="12.7" rot="R90"/>
+<instance part="C4" gate="G$1" x="269.24" y="17.78" rot="R90">
+<attribute name="PARTNO" x="269.24" y="17.78" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R5" gate="G$1" x="289.56" y="12.7" rot="R90">
+<attribute name="PARTNO" x="289.56" y="12.7" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND9" gate="1" x="299.72" y="-22.86"/>
-<instance part="X1" gate="G$1" x="279.4" y="12.7" rot="R90"/>
-<instance part="C5" gate="G$1" x="269.24" y="7.62" rot="R90"/>
+<instance part="X1" gate="G$1" x="279.4" y="12.7" rot="R90">
+<attribute name="PARTNO" x="279.4" y="12.7" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C5" gate="G$1" x="269.24" y="7.62" rot="R90">
+<attribute name="PARTNO" x="269.24" y="7.62" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND10" gate="1" x="261.62" y="0"/>
-<instance part="C6" gate="G$1" x="289.56" y="33.02" rot="R270"/>
+<instance part="C6" gate="G$1" x="289.56" y="33.02" rot="R270">
+<attribute name="PARTNO" x="289.56" y="33.02" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND11" gate="1" x="279.4" y="33.02" rot="R270"/>
-<instance part="C7" gate="G$1" x="289.56" y="40.64" rot="R270"/>
+<instance part="C7" gate="G$1" x="289.56" y="40.64" rot="R270">
+<attribute name="PARTNO" x="289.56" y="40.64" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND12" gate="1" x="393.7" y="-22.86"/>
-<instance part="C8" gate="G$1" x="276.86" y="-10.16"/>
-<instance part="C9" gate="G$1" x="284.48" y="-10.16"/>
-<instance part="R6" gate="G$1" x="299.72" y="60.96" rot="R180"/>
+<instance part="C8" gate="G$1" x="276.86" y="-10.16">
+<attribute name="PARTNO" x="276.86" y="-10.16" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C9" gate="G$1" x="284.48" y="-10.16">
+<attribute name="PARTNO" x="284.48" y="-10.16" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R6" gate="G$1" x="299.72" y="60.96" rot="R180">
+<attribute name="PARTNO" x="299.72" y="60.96" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND13" gate="1" x="337.82" y="71.12"/>
-<instance part="LED1" gate="G$1" x="347.98" y="-15.24"/>
-<instance part="R8" gate="G$1" x="347.98" y="-27.94" rot="R270"/>
+<instance part="LED1" gate="G$1" x="347.98" y="-15.24">
+<attribute name="PARTNO" x="347.98" y="-15.24" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R8" gate="G$1" x="347.98" y="-27.94" rot="R270">
+<attribute name="PARTNO" x="347.98" y="-27.94" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND14" gate="1" x="347.98" y="-38.1"/>
 <instance part="JP4" gate="G$1" x="561.34" y="-25.4" rot="R180"/>
 <instance part="GND23" gate="1" x="533.4" y="-22.86" rot="R180"/>
 <instance part="SUPPLY9" gate="G$1" x="546.1" y="-33.02" rot="R180"/>
-<instance part="J1" gate="G$1" x="269.24" y="-48.26"/>
+<instance part="J1" gate="G$1" x="269.24" y="-48.26">
+<attribute name="PARTNO" x="269.24" y="-48.26" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="JP5" gate="G$1" x="561.34" y="-63.5" rot="R180"/>
 <instance part="GND15" gate="1" x="535.94" y="-60.96"/>
-<instance part="SJ1" gate="1" x="452.12" y="-22.86"/>
-<instance part="SJ2" gate="1" x="452.12" y="-30.48"/>
-<instance part="SJ3" gate="1" x="487.68" y="-22.86"/>
-<instance part="J2" gate="G$1" x="500.38" y="22.86"/>
+<instance part="SJ1" gate="1" x="452.12" y="-22.86">
+<attribute name="BOM" x="452.12" y="-22.86" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="SJ2" gate="1" x="452.12" y="-30.48">
+<attribute name="BOM" x="452.12" y="-30.48" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="SJ3" gate="1" x="487.68" y="-22.86">
+<attribute name="BOM" x="487.68" y="-22.86" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="J2" gate="G$1" x="500.38" y="22.86">
+<attribute name="PARTNO" x="500.38" y="22.86" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY15" gate="G$1" x="292.1" y="-38.1"/>
 <instance part="GND16" gate="1" x="276.86" y="-50.8"/>
 <instance part="SUPPLY16" gate="G$1" x="490.22" y="48.26"/>
-<instance part="T1" gate="A" x="149.86" y="-27.94"/>
+<instance part="T1" gate="A" x="149.86" y="-27.94">
+<attribute name="PARTNO" x="149.86" y="-27.94" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY17" gate="G$1" x="149.86" y="-20.32"/>
-<instance part="T2" gate="A" x="165.1" y="-27.94"/>
+<instance part="T2" gate="A" x="165.1" y="-27.94">
+<attribute name="PARTNO" x="165.1" y="-27.94" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY18" gate="G$1" x="165.1" y="-20.32"/>
-<instance part="T3" gate="A" x="180.34" y="-27.94"/>
+<instance part="T3" gate="A" x="180.34" y="-27.94">
+<attribute name="PARTNO" x="180.34" y="-27.94" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY19" gate="G$1" x="180.34" y="-20.32"/>
-<instance part="T4" gate="A" x="195.58" y="-27.94"/>
+<instance part="T4" gate="A" x="195.58" y="-27.94">
+<attribute name="PARTNO" x="195.58" y="-27.94" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY20" gate="G$1" x="195.58" y="-20.32"/>
-<instance part="T5" gate="A" x="210.82" y="-27.94"/>
+<instance part="T5" gate="A" x="210.82" y="-27.94">
+<attribute name="PARTNO" x="210.82" y="-27.94" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY21" gate="G$1" x="210.82" y="-20.32"/>
-<instance part="D1" gate="G$1" x="246.38" y="43.18"/>
+<instance part="D1" gate="G$1" x="246.38" y="43.18">
+<attribute name="PARTNO" x="246.38" y="43.18" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY3" gate="G$1" x="254" y="45.72"/>
-<instance part="JP3" gate="G$1" x="12.7" y="38.1"/>
-<instance part="JP6" gate="G$1" x="53.34" y="38.1" rot="R180"/>
-<instance part="SJ4" gate="1" x="279.4" y="73.66" rot="R90"/>
+<instance part="JP3" gate="G$1" x="12.7" y="38.1">
+<attribute name="PARTNO" x="12.7" y="38.1" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="JP6" gate="G$1" x="53.34" y="38.1" rot="R180">
+<attribute name="PARTNO" x="53.34" y="38.1" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="SJ4" gate="1" x="279.4" y="73.66" rot="R90">
+<attribute name="BOM" x="279.4" y="73.66" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 <instance part="SUPPLY4" gate="G$1" x="279.4" y="83.82"/>
-<instance part="D2" gate="G$1" x="281.94" y="-40.64"/>
+<instance part="D2" gate="G$1" x="281.94" y="-40.64">
+<attribute name="PARTNO" x="281.94" y="-40.64" size="1.778" layer="96" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
