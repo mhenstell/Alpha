@@ -6661,7 +6661,7 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 </library>
 </libraries>
 <attributes>
-<attribute name="DATABASE" value="../partsdb.txt"/>
+<attribute name="DATABASE" value="../../EagleStuff/parts_database.txt"/>
 </attributes>
 <variantdefs>
 </variantdefs>
