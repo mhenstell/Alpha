@@ -6832,6 +6832,7 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <part name="D2" library="digits" deviceset="DIODE" device="SOD-128" value="PMEG3030EP">
 <attribute name="PARTNO" value="PMEG3030EP-115"/>
 </part>
+<part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6986,7 +6987,7 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <instance part="D1" gate="G$1" x="246.38" y="43.18">
 <attribute name="PARTNO" x="246.38" y="43.18" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="SUPPLY3" gate="G$1" x="254" y="45.72"/>
+<instance part="SUPPLY3" gate="G$1" x="256.54" y="43.18"/>
 <instance part="JP3" gate="G$1" x="12.7" y="38.1">
 <attribute name="PARTNO" x="12.7" y="38.1" size="1.778" layer="96" display="off"/>
 </instance>
@@ -7000,6 +7001,7 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <instance part="D2" gate="G$1" x="281.94" y="-40.64">
 <attribute name="PARTNO" x="281.94" y="-40.64" size="1.778" layer="96" display="off"/>
 </instance>
+<instance part="GND17" gate="1" x="251.46" y="48.26"/>
 </instances>
 <busses>
 </busses>
@@ -7632,8 +7634,8 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <segment>
 <pinref part="D1" gate="G$1" pin="C"/>
 <pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
-<wire x1="248.92" y1="43.18" x2="254" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="254" y1="43.18" x2="254" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="248.92" y1="43.18" x2="251.46" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="43.18" x2="256.54" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="JP3" gate="G$1" pin="2"/>
@@ -7860,6 +7862,13 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <pinref part="JP6" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="33.02" x2="63.5" y2="33.02" width="0.1524" layer="91"/>
 <label x="63.5" y="33.02" size="1.4224" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP2" gate="G$1" pin="GND"/>
+<wire x1="238.76" y1="45.72" x2="243.84" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="243.84" y1="45.72" x2="243.84" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="GND17" gate="1" pin="GND"/>
+<wire x1="243.84" y1="50.8" x2="251.46" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
