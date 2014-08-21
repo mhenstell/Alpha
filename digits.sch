@@ -6895,6 +6895,8 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <part name="SUPPLY5" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC5v"/>
 <part name="U$1" library="adafruit" deviceset="FIDUCIAL" device=""/>
 <part name="U$2" library="adafruit" deviceset="FIDUCIAL" device=""/>
+<part name="R19" library="SparkFun-Resistors" deviceset="RESISTOR" device="0805-RES" value="10k"/>
+<part name="SUPPLY12" library="SparkFun-Aesthetics" deviceset="VCC" device="" value="VCC5v"/>
 </parts>
 <sheets>
 <sheet>
@@ -7123,6 +7125,8 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <instance part="SUPPLY5" gate="G$1" x="264.16" y="104.14"/>
 <instance part="U$1" gate="G$1" x="368.3" y="38.1"/>
 <instance part="U$2" gate="G$1" x="373.38" y="38.1"/>
+<instance part="R19" gate="G$1" x="129.54" y="180.34" rot="R90"/>
+<instance part="SUPPLY12" gate="G$1" x="129.54" y="187.96"/>
 </instances>
 <busses>
 </busses>
@@ -7996,6 +8000,11 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <wire x1="274.32" y1="73.66" x2="271.78" y2="73.66" width="0.1524" layer="91"/>
 <label x="271.78" y="73.66" size="1.4224" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="R19" gate="G$1" pin="1"/>
+<wire x1="129.54" y1="175.26" x2="129.54" y2="172.72" width="0.1524" layer="91"/>
+<label x="129.54" y="172.72" size="1.4224" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="COL-DP2" class="0">
 <segment>
@@ -8579,6 +8588,11 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <pinref part="SUPPLY5" gate="G$1" pin="VCC"/>
 <wire x1="266.7" y1="99.06" x2="264.16" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="264.16" y1="99.06" x2="264.16" y2="104.14" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY12" gate="G$1" pin="VCC"/>
+<pinref part="R19" gate="G$1" pin="2"/>
+<wire x1="129.54" y1="187.96" x2="129.54" y2="185.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC9V" class="0">
